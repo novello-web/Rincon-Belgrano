@@ -236,7 +236,7 @@ function cargarCarrito() {
       mensaje += ` *Será abonado con:* ${formaPago}\n\n`;
       mensaje += `_Espero tu respuesta para confirmar mi pedido_`;
 
-      const numero = "5493534766302";
+      const numero = "543534069898";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
 
@@ -244,5 +244,6 @@ function cargarCarrito() {
     });
   });
 })();
+
 
 
