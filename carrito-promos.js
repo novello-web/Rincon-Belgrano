@@ -1,31 +1,22 @@
 (function () {
   // --------- Estado y almacenamiento ----------
-  function esRecarga() {
-    const nav = performance.getEntriesByType("navigation")[0];
-    return nav && nav.type === "reload";
-  }
+
 
   let carrito = {};
 
-  function guardarCarrito() {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  }
+function guardarCarrito() {
+  sessionStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
-  function cargarCarrito() {
-    if (esRecarga()) {
-      localStorage.removeItem("carrito");
-      carrito = {};
-      return;
-    }
-    const guardado = localStorage.getItem("carrito");
-    if (guardado) {
-      try {
-        carrito = JSON.parse(guardado);
-      } catch {
-        carrito = {};
-      }
-    }
+
+function cargarCarrito() {
+  const guardado = sessionStorage.getItem("carrito");
+  if (guardado) {
+    carrito = JSON.parse(guardado);
   }
+}
+
+
 
   cargarCarrito();
 
@@ -253,4 +244,5 @@
     });
   });
 })();
+
 
