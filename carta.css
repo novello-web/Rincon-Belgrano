@@ -74,7 +74,7 @@ body::before {
 
 
   .navrapido nav {
-  padding-bottom: 60px; /* o lo que mida tu botón */
+  padding-bottom: 120px; /* o lo que mida tu botón */
 }
 
   .navrapido a {
@@ -202,7 +202,7 @@ li {
     background-color: #d35400;
 }
 
-a {
+.vuelta {
     text-decoration: none;
     color: white;
     display: block;
@@ -688,6 +688,7 @@ h5{
   margin-bottom: 0;
 }
   }
+
 
 
 
