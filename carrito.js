@@ -416,14 +416,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let mensaje = `_¡Hola! Te hago el siguiente pedido:_\n\n`;
-    mensaje += ` *Nombre:* ${nombre}\n`;
-    mensaje += ` *Teléfono:* ${telefono}\n\n`;
+    mensaje += `👤 *Nombre:* ${nombre}\n`;
+    mensaje += `📱 *Teléfono:* ${telefono}\n\n`;
     mensaje += tipoEntrega.toLowerCase().includes('retira')
-      ? ` *Retiro del local*\n\n`
-      : ` *Delivery*\n\n`;
-    mensaje += ` *Pedido:*\n`;
+      ? `🏪 *Retiro del local*\n\n`
+      : `🏍️ *Delivery*\n\n`;
+    mensaje += `🍽️ *Pedido:*\n`;
     mensaje += detalle + `\n`;
-    mensaje += ` *Será abonado con:* ${formaPago}\n\n`;
+    mensaje += `💳 *Será abonado con:* ${formaPago}\n\n`;
     mensaje += `Espero tu respuesta para confirmar mi pedido`;
 
     const numero = '543534069898';
@@ -449,6 +449,7 @@ function mostrarNotificacion(texto) {
     setTimeout(() => noti.classList.add("oculto"), 500);
   }, 2000);
 }
+
 
 
 
