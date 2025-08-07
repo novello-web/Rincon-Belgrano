@@ -3,10 +3,7 @@ let productoCantidadPendiente = 1;
 
 // ------------ LocalStorage ------------
 
-function esRecarga() {
-  const nav = performance.getEntriesByType("navigation")[0];
-  return nav && nav.type === "reload";
-}
+
 
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -452,4 +449,5 @@ function mostrarNotificacion(texto) {
     setTimeout(() => noti.classList.add("oculto"), 500);
   }, 2000);
 }
+
 
