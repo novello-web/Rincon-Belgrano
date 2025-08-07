@@ -87,6 +87,7 @@ body::before {
     margin: 2rem 0;
     margin-bottom: 3rem;
     font-weight: bold;
+    display: block;
   }
 
   .navrapido a::after {
@@ -688,6 +689,7 @@ h5{
   margin-bottom: 0;
 }
   }
+
 
 
 
