@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mensaje += ` *Será abonado con:* ${formaPago}\n\n`;
     mensaje += `Espero tu respuesta para confirmar mi pedido`;
 
-    const numero = '5493534766302';
+    const numero = '543534069898';
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 
@@ -449,5 +449,6 @@ function mostrarNotificacion(texto) {
     setTimeout(() => noti.classList.add("oculto"), 500);
   }, 2000);
 }
+
 
 
