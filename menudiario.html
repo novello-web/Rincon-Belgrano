@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="menudiario.css">
+  <link rel="icon" href="fondo.jpg" type="image/jpg"> 
+  <title>El Rincón de las Delicias</title>
+</head>
+<body>
+<header class="navbar">
+      <div class="Volver">
+    <a href="index.html">Volver</a>
+  </div>
+</header>
+
+  <section id="menu-diario">
+    <h1>🍽️ Menú del Día</h1>
+    <div id="contenido-menu">
+      <p class="cargando">Cargando menú...</p>
+    </div>
+  </section>
+
+
+    <footer class="footer">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/el_rincon_de_las_delicias/" target="_blank" class="social-link">
+        <img src="ig.png" alt="Instagram" class="social-icon">
+        <span>Instagram</span>
+      </a>
+            <a href="https://www.facebook.com/rincondelasdeliciasvm/?locale=es_LA" target="_blank" class="social-link">
+
+        <img src="facebook.png" alt="Logo facebook" class="social-icon">
+        <span>Facebook</span>
+      </a>
+    </div>
+      <p class="ubicacion-footer">📍Calle Belgrano 155</p>
+    <p class="footer-credit">© 2025 Rincon de las Delicias. Comida Artesanal desde Cordoba.</p>
+</footer>
+
+  <button id="ver-carrito" onclick="mostrarCarrito()"  class="ver-carrito">Ver carrito</button>
+
+  <div id="modal-carrito" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+      <h2 class="tupedido">Tu pedido:</h2>
+      <ul id="lista-carrito"></ul>
+      <button id="whatsapp" onclick="enviarWhatsApp()">Enviar por WhatsApp</button> 
+<button id="borrar-carrito" class="oculto">Vaciar carrito</button>
+    </div>
+  </div>
+<div id="notificacion" class="notificacion oculto">Producto agregado al carrito</div>
+
+<!-- Modal de datos antes de enviar por WhatsApp -->
+
+<div id="modal-whatsapp" class="modal oculto">
+  <div class="modal-contenido-whatsapp">
+        <div>
+      <h5>¡ULTIMO PASO!</h5>
+    </div>
+    <h2 class="titulo-modal">Datos para el pedido</h2>
+
+    <div class="resumen-carrito" id="resumen-en-modal">
+      <!-- se llena dinámicamente -->
+    </div>
+
+    <form id="form-whatsapp">
+      <div class="field">
+        <label for="nombre" class="label-form">Nombre y apellido</label>
+        <input type="text" id="nombre" name="nombre" required class="input-form" />
+      </div>
+      <div class="field">
+        <label for="telefono" class="label-form">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required  class="input-form"/>
+      </div>
+      <div class="field">
+        <label for="tipo-entrega" class="label-form">Retira / Delivery</label>
+        <select id="tipo-entrega" name="tipo-entrega" required class="select-form">
+          <option value="">Elegí una opción</option>
+          <option value="Retira del local">Retira del local</option>
+          <option value="Delivery">Delivery</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="forma-pago" class="label-form">Forma de pago</label>
+        <select id="forma-pago" name="forma-pago" required>
+          <option value="">Elegí una opción</option>
+          <option value="Efectivo">Efectivo</option>
+          <option value="Transferencia">Transferencia</option>
+          <option value="Tarjeta">Tarjeta</option>
+        </select>
+      </div>
+      <div class="acciones">
+        <button type="button" class="button-form" onclick="cerrarModalWhatsApp()">Cancelar</button>
+        <button type="submit" class="button-form">Enviar por WhatsApp</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- Siempre cargá los scripts al final del body -->
+  <script src="carrito-promos.js"></script>
+  <script src="menudiario.js"></script>
+</body>
+</html>

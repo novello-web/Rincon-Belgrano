@@ -1,0 +1,589 @@
+body{
+    background-image: url(fondo.jpg);
+    background-attachment: fixed;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* opacidad negra */
+    z-index: -1;
+}
+
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0.2rem;
+    position: fixed; 
+    top: 0;          
+    left: 0;
+    width: 100%;      
+    z-index: 1000; 
+  }
+  
+h1{
+    width: 50%;
+    margin: auto;
+    color: #f39c12;
+    text-shadow: 0 0 20px #f1c40f;
+    margin-bottom: 100px;
+    margin-top: 200px;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.titulo-comida{
+    text-shadow: 0 0 25px #f1c40f;
+    font-weight: 400;
+    border-bottom: 1px solid #f1f1f1; 
+    margin-left: 1rem;
+    padding: 5px 10px;
+    color: #f39c12;
+    font-size: 1.7rem;
+}
+
+.promo-item{
+    padding: 20px;
+    font-size: 2.5rem;
+    color: #f1f1f1;
+    font-weight: bold;
+    margin-left: 12px;
+    text-shadow: 0 0 20px #c4bfb7;
+}
+
+
+.Volver {
+    width: fit-content;
+    margin: 30px;
+    background-color: #f39c12;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.Volver:hover {
+    background-color: #d35400;
+}
+
+
+.agregar{
+    margin-left: 12px;
+    padding: 8px 14px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.agregar:hover {
+    background-color: #d35400;
+}
+
+
+#ver-carrito {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f39c12;
+    color: white;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    box-shadow: 0 0 10px #00000088;
+    cursor: pointer;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+#ver-carrito:hover {
+    background-color: #d35400;
+}
+
+/* Modal del carrito */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #000;
+  position: relative;
+  max-height: 80vh;    
+  overflow: hidden;
+}
+
+.modal-contenido-whatsapp{
+    background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #000;
+  position: relative;
+  max-height: 80vh;    
+  overflow: hidden;
+}
+
+#lista-carrito {
+  overflow-y: auto;        /* NUEVO: activa scroll vertical */
+  max-height: 300px;       /* NUEVO: altura máxima del listado */
+  margin-bottom: 15px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.oculto {
+    display: none;
+}
+
+#lista-carrito .item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #333;
+  line-height: normal;
+  margin: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Botón WhatsApp */
+#whatsapp {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+
+
+.notificacion {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #444;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #00000055;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 9999;
+  max-width: 90%;
+  text-align: center;
+}
+
+
+.notificacion.visible {
+  opacity: 1;
+}
+
+.oculto {
+  display: none;
+}
+
+.tupedido{
+    color: #444;
+    text-shadow: none;
+}
+
+.btn-eliminar {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 12px;
+  align-self: center;
+}
+
+
+.listovich{
+  color: #444;
+  font-size: 1.1rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: none;
+  margin-left: 10px;
+}
+
+
+#borrar-carrito {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+#borrar-carrito:hover {
+  background-color: #c0392b;
+}
+
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+
+.cantidad-container {
+  display: inline;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.input-cantidad{
+  padding: 8px;
+  width: 8%;
+  border-radius: 15px;
+  border: none;
+}
+
+.btn-confirmar{
+  display: inline;
+}
+
+
+.btn-confirmar{
+    margin-left: 12px;
+    padding: 8px 14px;
+    background-color: #f39c12; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-confirmar:hover{
+  background-color: #d35400;
+}
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  margin: auto;
+  text-shadow: none;
+  margin-top: auto;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #aaa;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.ubicacion-footer {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer-credit {
+  color: #999;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+
+
+.field {
+  margin-bottom: 12px; 
+  display: flex; 
+  flex-direction: column;
+}
+.label-form { font-size: .9rem; margin-bottom: 4px; }
+.input-form, .select-form {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+.button-form {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.button-form:first-child { 
+  background: #ddd; 
+  cursor: pointer;
+}
+
+.button-form:last-child { 
+  background: #25D366; 
+  color: #fff; 
+  cursor: pointer;
+
+}
+
+.titulo-modal{
+    font-weight: 400;
+    border-bottom: 1px solid #f1f1f1; 
+    margin-left: 1rem;
+    padding: 5px 10px;
+    color: #f39c12;
+    font-size: 1.4rem;
+}
+
+.resumen-carrito {
+  background: #f0f8ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+    width: 90%;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+
+
+
+.promo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 8px;
+  padding: 20px;
+  font-size: 2.5rem;
+  color: #f1f1f1;
+  font-weight: bold;
+  margin-left: 12px;
+  text-shadow: 0 0 20px #c4bfb7;
+}
+
+.promo-item .descripcion {
+  font-size: 1em; /* ajustá según necesites */
+}
+
+.promo-item .agregar {
+  align-self: start; 
+  margin: 0;
+}
+
+
+  .resumen-carrito {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+    margin: auto;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    line-height: 1.3;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+
+
+
+  #ver-carrito {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+
+  .modal-contenido {
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+  }
+
+
+
+  .Volver {
+    margin: 15px;
+    padding: 6px 12px;
+  }
+
+    #whatsapp{
+    width: 50%;
+    padding: 5px;
+    margin-left: 20px;
+  }
+
+  .informacion{
+    padding: 50px;
+  }
+
+    #borrar-carrito{
+    margin-left: 20px;
+  }
+
+
+  .cantidad-container {
+  display: inline;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+
+
+  .input-cantidad{
+    width: 40%;
+    padding: 8px;
+  }
+    .btn-confirmar{
+      padding: 8px 6px ;
+    }
+
+
+    .social-link{
+  font-size: 1rem;
+}
+
+.modal-contenido-whatsapp{
+    max-width: 80%;
+    max-height: 80%;
+    padding: 1rem 1rem 1rem;
+    box-sizing: border-box;
+    margin: auto; 
+    font-size: 0.95rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+  .titulo-modal {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+
+
+  .field {
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input-form,
+  .select-form {
+    width: 100%;
+    box-sizing: border-box;
+
+  }
+
+  .acciones {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .button-form {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 0;
+
+  }
+
+h5{
+  margin-bottom: 0;
+}
+
+
+
+
+}
+
+
+

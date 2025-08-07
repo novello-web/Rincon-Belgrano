@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Rincón de Las Delicias</title>
+  <link rel="stylesheet" href="carta.css">
+  <link rel="icon" href="fondo.jpg" type="image/jpg">
+</head>
+<body>
+<header class="navbar">
+      <div class="Volver">
+    <a href="index.html">Volver</a>
+  </div>
+    <button class="menu-toggle" aria-label="Abrir menú">
+    ☰
+  </button>
+  <section class="navrapido">
+  <nav>
+<a href="#lomitos">Lomitos</a>
+<a href="#entradas">Entradas</a>
+<a href="#ensaladas">Ensaladas</a>
+<a href="#milanesas">Milanesas</a>
+<a href="#carne-ternera">Carne de Ternera</a>
+<a href="#pollo">Pollo</a>
+<a href="#carne-cerdo">Carnes de Cerdo</a>
+<a href="#pescados">Pescados</a>
+<a href="#tablas">Tablas</a>
+<a href="#pastas">Pastas</a>
+<a href="#tartas">Tartas</a>
+<a href="#postres">Postres</a>
+<a href="#vinos">Vinos</a>
+<a href="#cervezas">Cervezas</a>
+  </nav>
+
+  </section>
+
+
+
+</header>
+
+  <h1>🍽️Nuestra Carta</h1>
+  <h2 id="lomitos">LOMITOS, HAMBURGUESAS Y SANDWICHES DE MILA</h2>
+  <ul>
+    <li>Lomito comun <button onclick="agregarAlCarrito('Lomito comun', event)" class="button-agregar">Agregar</button>
+      <span class="cantidad-container"></span></li>
+    <li>Lomito especial <button onclick="agregarAlCarrito('Lomito especial', event )" class="button-agregar">Agregar</button>
+      <span class="cantidad-container"></span></li>
+    <li>Hamburguesa comun <button onclick="agregarAlCarrito('Hamburguesa comun', event)" class="button-agregar">Agregar</button>
+      <span class="cantidad-container"></span></li>
+    <li>Hamburguesa especial <button onclick="agregarAlCarrito('Hamburguesa especial', event)" class="button-agregar">Agregar</button>
+      <span class="cantidad-container"></span></li>
+    <li>Sandwich de Milanesa <button onclick="agregarAlCarrito('sandwich de milanesa', event)" class="button-agregar">Agregar</button>
+      <span class="cantidad-container"></span></li>
+  </ul>
+    <h2 id="entradas">ENTRADAS</h2>
+    <ul>
+      <li>Vitel tone <button onclick="agregarAlCarrito('Vitel tone', event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Lengua a la vinagreta <button onclick="agregarAlCarrito('Lengua a la vinagreta', event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Rabas <button onclick="agregarAlCarrito('Rabas',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Langostinos rebozados <button onclick="agregarAlCarrito('Langostinos rebozados',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Papas Bomba <button onclick="agregarAlCarrito('Papas Bomba',event)" class="button-agregar">Agregar</button>  
+        <span class="cantidad-container"></span></li>
+      <li>Papas Clásicas <button onclick="agregarAlCarrito('Papas Clásicas',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h2 id="ensaladas">ENSALADAS</h2>
+    <ul>
+      <li>Caesar con pollo <button onclick="agregarAlCarrito('Caesar con pollo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Caesar con langostinos <button onclick="agregarAlCarrito('Caesar con langostinos',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>De mar <button onclick="agregarAlCarrito('Ensalada de mar',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>De pollo <button onclick="agregarAlCarrito('Ensalada de pollo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>De atún <button onclick="agregarAlCarrito('Ensalada de atún',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h2 id="milanesas">MILANESAS</h2>
+    <ul>
+      <li>Clásicas <button onclick="agregarAlCarrito('Milanesa clásica',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Suiza <button onclick="agregarAlCarrito('Milanesa suiza',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Napolitana <button onclick="agregarAlCarrito('Milanesa napolitana',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Napolitana especial <button onclick="agregarAlCarrito('napolitana especial',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>A caballo <button onclick="agregarAlCarrito('Milanesa a caballo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Húngara <button onclick="agregarAlCarrito('Milanesa húngara',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Fugazzeta <button onclick="agregarAlCarrito('Milanesa fugazzeta',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>La BOMBA <button onclick="agregarAlCarrito('La BOMBA',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+
+    <h3>TODAS LAS MILANESAS SALEN CON GUARNICIÓN A ELECCIÓN</h3>
+    <h2 id="carne-ternera">CARNES DE TERNERA</h2>
+    <ul>
+      <li>Entrecotte <button onclick="agregarAlCarrito('Entrecotte',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Bife de chorizo <button onclick="agregarAlCarrito('Bife de chorizo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Matambre <button onclick="agregarAlCarrito('Matambre',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Matambre a la pizza <button onclick="agregarAlCarrito('Matambre a la pizza',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Matambre 4 quesos <button onclick="agregarAlCarrito('Matambre cuatro quesos',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Vacio <button onclick="agregarAlCarrito('Vacio',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h3>TODO SALE CON GUARNICIÓN Y SALSAS A ELECCIÓN</h3>
+
+    <h2 id="pollo">POLLO</h2>
+    <ul>
+      <li>Pollo a la piedra <button onclick="agregarAlCarrito('Pollo a la piedra',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>1/2 Pollo <button onclick="agregarAlCarrito('1/2 Pollo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>1/4 Pollo <button onclick="agregarAlCarrito('1/4 Pollo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Pechuga grillada <button onclick="agregarAlCarrito('Pechuga grillada',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+        <h3>TODOS LOS POLLOS SALEN CON GUARNICIÓN A ELECCIÓN</h3>
+
+    <h2 id="carne-cerdo">CARNES DE CERDO</h2>
+    <ul>
+      <li>Matambre <button onclick="agregarAlCarrito('Matambre de cerdo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Matambre napolitana <button onclick="agregarAlCarrito('Matambre napolitana',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Matambre 4 quesos <button onclick="agregarAlCarrito('Matambre cuatro quesos (cerdo)',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+        <h3>TODO SALE CON GUARNICIÓN A ELECCIÓN</h3>
+    <h2 id="pescados">PESCADOS</h2>
+    <ul>
+      <li>Filet de merluza <button onclick="agregarAlCarrito('Merluza',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Salmon Rosado <button onclick="agregarAlCarrito('Salmón rosado',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Langostinos al ajillo <button onclick="agregarAlCarrito('Langostinos al ajillo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Paella <button onclick="agregarAlCarrito('Paella',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h3>TODOS LOS PESCADOS SALEN CON GUARNICIÓN A ELECCIÓN</h3>
+
+    <h2 id="tablas">TABLAS</h2>
+    <ul>
+    <li>TABLA DE FRITURAS (3 personas)<button onclick="agregarAlCarrito('Tabla de frituras',event)" class="button-agregar">Agregar</button>
+      <span class="cantidad-container"></span></li>
+    <li>TABLA CRIOLLA (3 personas) <button onclick="agregarAlCarrito('Tabla criolla',event)" class="button-agregar">Agregar</button>
+      <span class="cantidad-container"></span></li>
+    </ul>
+    <h2 id="pastas">PASTAS</h2>
+    <ul>
+      <li>Ñoquis <button onclick="agregarAlCarrito('Ñoquis',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Canelones carne y verdura <button onclick="agregarAlCarrito('Canelones carne y verdura',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Lasagna vegetariana <button onclick="agregarAlCarrito('Lasagna vegetariana',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Canelones de verdura y choclo <button onclick="agregarAlCarrito('Canelones de verdura y choclo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+
+      <li>Lasagna de carne y verdura<button onclick="agregarAlCarrito('Lasagna de carne y verdura',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+
+      <li> Ravioles de carne y verdura<button onclick="agregarAlCarrito('Ravioles de carne y verdura',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+
+      <li>Ravioles de espinaca y queso <button onclick="agregarAlCarrito('Ravioles de espinaca y queso ',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+
+      <li>Sorrentinos de jamon y queso <button onclick="agregarAlCarrito('Sorrentinos de jamon y queso ',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+
+      <li>Sorrentinos de calabaza y queso <button onclick="agregarAlCarrito('Sorrentinos de calabaza y queso',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h3>TODAS LAS PASTAS SALEN CON SALSAS A ELECCIÓN</h3>
+    <h2 id="empanadas">EMPANADAS</h2>
+    <ul>
+      <li>Criolla dulce <button onclick="agregarAlCarrito('Empanada criolla dulce',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Jamon y queso <button onclick="agregarAlCarrito('Empanada jamon y queso',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Carne cortada a cuchillo <button onclick="agregarAlCarrito('Empanada de carne cortada a cuchillo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Arabes <button onclick="agregarAlCarrito('Empanada Arabe',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Napolitana <button onclick="agregarAlCarrito('Empanada Napolitana',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Pollo <button onclick="agregarAlCarrito('Empanada de pollo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Caprese <button onclick="agregarAlCarrito('Empanada Caprese',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Verdura <button onclick="agregarAlCarrito('Empanada de Verdura',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Criolla Salada <button onclick="agregarAlCarrito('Empanada criolla Salada',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h2 id="tartas">TARTAS</h2>
+    <ul>
+      <li>Verdura <button onclick="agregarAlCarrito('Tarta de verdura',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Jamón y queso <button onclick="agregarAlCarrito('Tarta jamón y queso',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h2 id="postres">POSTRES</h2>
+    <ul>
+      <li>Tiramisú <button onclick="agregarAlCarrito('Tiramisú',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Chocotorta <button onclick="agregarAlCarrito('Chocotorta',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Cheescake de frutos rojos <button onclick="agregarAlCarrito('Cheescake de frutos rojos',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Brownie <button onclick="agregarAlCarrito('Brownie',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Choco-Oreo <button onclick="agregarAlCarrito('Choco-Oreo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+    <h2 id="vinos">VINOS</h2>
+    <ul>
+      <li>Santa Julia <button onclick="agregarAlCarrito('Vino Santa Julia',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Rutini <button onclick="agregarAlCarrito('Rutini',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Latitud 33 <button onclick="agregarAlCarrito('Latitud 33',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Castel <button onclick="agregarAlCarrito('Castel',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Portillo <button onclick="agregarAlCarrito('Portillo',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Etchart privado <button onclick="agregarAlCarrito('Etchart privado',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Luigi Bosca <button onclick="agregarAlCarrito('Luigi Bosca',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>La Linda <button onclick="agregarAlCarrito('La Linda',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+
+    <h2 id="cervezas">CERVEZAS</h2>
+    <ul>
+      <li>Corona 330cc <button onclick="agregarAlCarrito('Corona 330cc',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Corona 710cc <button onclick="agregarAlCarrito('Corona 710cc',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Patagonia 740cc <button onclick="agregarAlCarrito('Patagonia 740cc',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+        <li>Quilmes 473cc <button onclick="agregarAlCarrito('Quilmes 473cc',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+      <li>Imperial 473cc <button onclick="agregarAlCarrito('Imperial 473cc',event)" class="button-agregar">Agregar</button>
+        <span class="cantidad-container"></span></li>
+    </ul>
+
+
+    <footer class="footer">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/el_rincon_de_las_delicias/" target="_blank" class="social-link">
+        <img src="ig.png" alt="Instagram" class="social-icon">
+        <span>Instagram</span>
+      </a>
+            <a href="https://www.facebook.com/rincondelasdeliciasvm/?locale=es_LA" target="_blank" class="social-link">
+
+        <img src="facebook.png" alt="Logo facebook" class="social-icon">
+        <span>Facebook</span>
+      </a>
+    </div>
+      <p class="ubicacion-footer">📍Calle Belgrano 155</p>
+    <p class="footer-credit">© 2025 Rincon de las Delicias. Comida Artesanal desde Cordoba.</p>
+</footer>
+
+  <button id="ver-carrito" onclick="mostrarCarrito()">Ver carrito</button>
+
+  <div id="modal-carrito" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+      <h2 class="tupedido">Tu pedido:</h2>
+      <ul id="lista-carrito"></ul>
+      <button id="whatsapp" onclick="enviarWhatsApp()">Hacer tu Pedido</button> 
+<button id="borrar-carrito" class="oculto">Vaciar carrito</button>
+    </div>
+  </div>
+<!-- Modal de Opciones -->
+<div id="modal-opciones" class="modal oculto">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarOpciones()">&times;</span>
+    <h2 id="modal-titulo" class="tupedido"></h2>
+
+    <div id="contenedor-salsas">
+      <label for="select-salsa">Elegí tu salsa:</label>
+      <select id="select-salsa" class="select-modal">
+        <option value="">Sin salsa</option>
+      </select>
+    </div>
+
+    <div id="contenedor-guarniciones">
+      <label for="select-guarnicion">Elegí tu guarnición:</label>
+      <select id="select-guarnicion" class="select-modal">
+        <option value="">Sin guarnición</option>
+      </select>
+    </div>
+
+    <button onclick="confirmarAgregar()" class="prime">Agregar al carrito</button>
+  </div>
+</div>
+<div id="notificacion" class="notificacion oculto">Producto agregado al carrito</div>
+
+<!-- Modal de datos antes de enviar por WhatsApp -->
+<div id="modal-whatsapp" class="modal oculto">
+  <div class="modal-contenido-whatsapp">
+    <div>
+      <h5>¡ULTIMO PASO!</h5>
+    </div>
+    <h2 class="datos">Datos para el pedido</h2>
+
+    <div class="resumen-carrito" id="resumen-en-modal">
+      <!-- se llena dinámicamente -->
+    </div>
+
+    <form id="form-whatsapp">
+      <div class="field">
+        <label for="nombre" class="label-form">Nombre y apellido</label>
+        <input type="text" id="nombre" name="nombre" required class="input-form" />
+      </div>
+      <div class="field">
+        <label for="telefono" class="label-form">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required  class="input-form"/>
+      </div>
+      <div class="field">
+        <label for="tipo-entrega" class="label-form">Retira / Delivery</label>
+        <select id="tipo-entrega" name="tipo-entrega" required class="select-form">
+          <option value="">Elegí una opción</option>
+          <option value="Retira del local">Retira del local</option>
+          <option value="Delivery">Delivery</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="forma-pago" class="label-form">Forma de pago</label>
+        <select id="forma-pago" name="forma-pago" required>
+          <option value="">Elegí una opción</option>
+          <option value="Efectivo">Efectivo</option>
+          <option value="Transferencia">Transferencia</option>
+          <option value="Tarjeta">Tarjeta</option>
+        </select>
+      </div>
+      <div class="acciones">
+        <button type="button" class="button-form" onclick="cerrarModalWhatsApp()">Cancelar</button>
+        <button type="submit" class="button-form">Enviar por WhatsApp</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="carta.js"></script>
+  <script src="carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,691 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+body {
+    font-family: sans-serif;
+    background-image: url(fondo.jpg);
+    background-attachment: fixed;
+    margin: 0;
+    box-sizing: border-box;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* opacidad negra */
+    z-index: -1;
+}
+
+
+
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0.2rem;
+    position: fixed; 
+    top: 0;          
+    left: 0;
+    width: 100%;      
+    z-index: 1000; 
+  }
+  
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: 40px;
+    background-color: #f39c12;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 50px;
+    z-index: 999;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .menu-toggle:hover {
+    background-color: #d35400;
+}
+
+ .navrapido {
+  position: fixed;
+  top: 0;
+  right: -100%; /* empieza oculto */
+  width: 35%;
+  height: 100vh;
+  background-color: #111;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 9999;
+  display: flex;
+  overflow: scroll;
+
+  }
+
+
+  .navrapido nav {
+  padding-bottom: 60px; /* o lo que mida tu botón */
+}
+
+  .navrapido a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.3rem 0;
+    transition: color 0.3s;
+    position: relative;
+    margin: 2rem 0;
+    margin-bottom: 3rem;
+    font-weight: bold;
+  }
+
+  .navrapido a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    background-color: #f39c12;
+    transition: width 0.3s ease;
+  }
+
+  .navrapido a:hover::after {
+    width: 100%;
+  }
+
+  .navrapido a:hover {
+    color: #f39c12;
+  }
+
+  .navrapido.show {
+    display: flex;
+    right: -30px; /* entra desde la derecha */
+  }
+
+[id] {
+  scroll-margin-top: 130px; 
+}
+
+
+h1{
+    text-shadow: 0 0 20px #f1c40f;
+    border: none;
+    padding: 0;
+    font-size: 2.7rem;
+    color: #f39c12;
+    width: 50% ;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+
+
+h2 {
+    text-shadow: 0 0 25px #f1c40f;
+    font-weight: 400;
+    border-bottom: 1px solid #f1f1f1; 
+    margin-left: 1rem;
+    padding: 5px 10px;
+    color: #f39c12;
+    font-size: 1.7rem;
+}
+
+h3 {
+    text-shadow: 0 0 25px #f1c40f;
+    font-weight: 400;
+    padding-top: 12px;
+    color: #f39c12;
+    text-align: center;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+ul {
+    line-height: 2.8rem;
+    padding-left: 20px;
+    margin-left: 3rem;
+}
+
+li {
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 5rem;
+    text-shadow: 0 0 20px #c4bfb7;
+}
+/* Botones "Agregar" */
+.button-agregar {
+    margin-left: 12px;
+    padding: 8px 14px;
+    background-color: #f39c12; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.button-agregar:hover {
+    background-color: #d35400;
+}
+
+
+
+
+.Volver {
+    width: fit-content;
+    margin: 30px;
+    background-color: #f39c12;
+    padding: 8px 15px;
+    border-radius: 50px;
+    z-index: 999;
+    font-weight: bold;
+}
+
+
+.Volver:hover {
+    background-color: #d35400;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Botón "Ver carrito" */
+#ver-carrito {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f39c12; 
+    color: white;
+    padding: 14px 22px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+#ver-carrito:hover {
+    background-color: #d35400;
+}
+
+/* Modal del carrito */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+
+.modal-contenido {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #000;
+  position: relative;
+  max-height: 80vh;    
+  overflow: hidden;
+}
+
+#lista-carrito {
+  overflow-y: auto;        /* NUEVO: activa scroll vertical */
+  max-height: 300px;       /* NUEVO: altura máxima del listado */
+  margin-bottom: 15px;
+}
+
+.modal-contenido-whatsapp{
+    background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #000;
+  position: relative;
+  max-height: 80vh;    
+  overflow: scroll;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+#lista-carrito .item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: normal;
+  margin: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding: 3px;
+}
+
+/* Botón WhatsApp */
+#whatsapp {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+
+p{
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+
+.prime{
+    background-color: #f1c40f;
+    transition: background-color 0.3s;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.prime:hover {
+    background-color: #d35400;
+}
+
+
+.notificacion {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #444;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #00000055;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 9999;
+  max-width: 90%;
+  text-align: center;
+}
+
+.notificacion.visible {
+  opacity: 1;
+}
+
+.oculto {
+  display: none;
+}
+
+.tupedido{
+    color: #444;
+    text-shadow: none;
+}
+
+
+.select-modal {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  margin-top: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-eliminar {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 12px;
+  align-self: center;
+}
+
+.btn-eliminar:hover {
+  background-color: transparent;
+}
+
+.listovich{
+  color: #444;
+  font-size: 1.1rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: none;
+  margin-left: 10px;
+}
+
+#borrar-carrito {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+#borrar-carrito:hover {
+  background-color: #c0392b;
+}
+
+.cantidad-container {
+  display: inline;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+
+.input-cantidad{
+  padding: 8px;
+  width: 8%;
+  border-radius: 15px;
+  border: none;
+
+}
+
+.btn-confirmar{
+  display: inline;
+  margin-left: 12px;
+    padding: 8px 14px;
+    background-color: #f39c12; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #aaa;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.ubicacion-footer {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.footer-credit {
+  color: #999;
+  font-size: 0.8rem;
+
+}
+
+.datos{
+  text-shadow: none;
+}
+
+.field {
+  margin-bottom: 12px; 
+  display: flex; 
+  flex-direction: column;
+}
+.label-form { font-size: .9rem; margin-bottom: 4px; }
+.input-form, .select-form {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+.button-form {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.button-form:first-child { 
+  background: #ddd; 
+  cursor: pointer;
+}
+
+.button-form:last-child { 
+  background: #25D366; 
+  color: #fff; 
+  cursor: pointer;
+
+}
+
+.resumen-carrito {
+  background: #f0f8ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    width: 90%;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  h2, h3, ul, p {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  li {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .button-agregar,
+  .boton-tabla {
+    margin: 10px;
+    width: 25%;
+    padding: 10px;
+    display: block;
+  }
+
+
+
+  #ver-carrito {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+
+  .modal-contenido {
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+  }
+
+  .select-modal {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .prime {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  #whatsapp{
+    width: 50%;
+    padding: 5px;
+    margin-left: 20px;
+  }
+
+
+  .informacion{
+    padding: 50px;
+  }
+
+
+  .input-cantidad{
+    width: 20%;
+    padding: 8px;
+    margin-bottom: 30px ;
+  }
+    .btn-confirmar{
+      padding: 8px 2px ;
+      width: 10%;
+    }
+
+  #borrar-carrito{
+    margin-left: 20px;
+  }
+
+  .social-link{
+  font-size: 1rem;
+}
+
+.navrapido{
+  width: 50%;
+}
+
+
+.modal-contenido-whatsapp{
+    max-width: 80%;
+    max-height: 80%;
+    padding: 1rem 1rem 1rem;
+    box-sizing: border-box;
+    margin: auto; 
+    font-size: 0.95rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+  .datos {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .resumen-carrito {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+    margin: auto;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    line-height: 1.3;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+
+  .field {
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input-form,
+  .select-form {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .acciones {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .button-form {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+h5{
+  margin-bottom: 0;
+}
+  }
+

@@ -1,0 +1,169 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body{
+    background-image: url(fondo.jpg) ;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* opacidad negra */
+    z-index: -1;
+}
+
+
+h1{
+    color: #f39c12;
+    text-align: center;
+    text-shadow: 0 0 20px #f39c12;
+
+}
+
+.card-carta{
+    background-color: #f1f1f1;
+    padding: 30px;
+    border: none;
+    border-radius: 0.7rem;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 0 0 12px 0 #c4bfb7;
+    width: 70%;
+}
+
+.enlace-carta{
+    background-color: black;
+    border-radius: 0.7rem;
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+a{
+    color: #f39c12;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.card-promos{
+    background-color: #f1f1f1;
+    padding: 30px;
+    border: none;
+    border-radius: 0.7rem;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 0 0 12px 0 #c4bfb7;
+    width: 70%;
+}
+
+
+.card-menu{
+    background-color: #f1f1f1;
+    padding: 30px;
+    border: none;
+    border-radius: 0.7rem;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    box-shadow: 0 0 12px 0 #c4bfb7;
+    width: 70%;
+}
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #aaa;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.ubicacion-footer {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer-credit {
+  color: #999;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-carta,
+  .card-promos {
+    width: 75%;
+    margin-top: 40px;
+    padding: 20px;
+  }
+
+  .enlace-carta {
+    width: 95%;
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+
+  .social-link{
+    font-size: 1rem;
+  }
+}
