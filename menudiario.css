@@ -181,7 +181,7 @@ a {
 #whatsapp {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #25D366;
+    background-color: #f39c12;
     color: white;
     border: none;
     border-radius: 8px;
@@ -191,7 +191,7 @@ a {
 }
 
 #whatsapp:hover {
-    background-color: #1ebe5d;
+    background-color: #d35400;
 }
 
 #contenido-menu span{
@@ -533,7 +533,7 @@ a {
 
     #whatsapp{
     width: 50%;
-    padding: 5px;
+    padding: 8px;
   }
 
   .informacion{
@@ -630,6 +630,7 @@ h5{
 }
 
 }
+
 
 
 
