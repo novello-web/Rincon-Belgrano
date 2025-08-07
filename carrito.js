@@ -12,13 +12,13 @@ function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+function guardarCarrito() {
+  sessionStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+
 function cargarCarrito() {
-  if (esRecarga()) {
-    localStorage.removeItem("carrito");
-    carrito = {};
-    return;
-  }
-  const guardado = localStorage.getItem("carrito");
+  const guardado = sessionStorage.getItem("carrito");
   if (guardado) {
     carrito = JSON.parse(guardado);
   }
@@ -452,3 +452,4 @@ function mostrarNotificacion(texto) {
     setTimeout(() => noti.classList.add("oculto"), 500);
   }, 2000);
 }
+
