@@ -3,15 +3,15 @@ let productoCantidadPendiente = 1;
 
 // ------------ LocalStorage ------------
 
-
-
-function guardarCarrito() {
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+function esRecarga() {
+  const nav = performance.getEntriesByType("navigation")[0];
+  return nav && nav.type === "reload";
 }
 
 function guardarCarrito() {
   sessionStorage.setItem("carrito", JSON.stringify(carrito));
 }
+
 
 
 function cargarCarrito() {
@@ -21,11 +21,12 @@ function cargarCarrito() {
   }
 }
 
+
 // inicialización
 cargarCarrito();
 
 // ------------ Configuración de productos ------------
-const productosConGuarnicion = ["Milanesa", "Pollo", "Cerdo", "Pescado", "Ternera", "Merluza", "Salmón", "Langostinos", "Napolitana Especial"];
+const productosConGuarnicion = ["Milanesa", "Pollo", "Cerdo", "Pescado", "Ternera", "Merluza", "Salmón", "Langostinos", "Napolitana Especial", "La Bomba", "Pechuga Grillada"]  ;
 const productosConSalsa = ["Ternera", "Pasta"];
 
 const guarniciones = ["Papas fritas", "Puré", "Ensalada", "Papas rústicas", "Arroz"];
@@ -33,7 +34,7 @@ const productosGuarnicionReducida = ["Empanada", "Tarta"];
 
 const carneTerneraItems = ["Entrecotte", "Bife de chorizo", "Matambre", "Matambre a la pizza", "Vacio"];
 const pastasItems = ["Ñoquis", "Ravioles", "Sorrentinos", "Lasagna", "Canelones"];
-const pescadosItems = ["Merluza", "Salmón", "Langostinos"];
+const pescadosItems = ["Merluza", "Salmón", "Langostinos", "Paella"];
 
 const salsas = ["Fileto", "Bolognesa", "Cuatro quesos", "Roquefort"];
 const salsasCarneTernera = ["Chimichurri", "Roquefort", "Mostaza", "Provenzal"];
@@ -90,6 +91,10 @@ let necesitaGuarnicionLocal = productosConGuarnicion.some(p => productoLower.inc
 
   // FORZAR que Cerdo nunca tenga salsa
   if (productoLower.includes("cerdo")) {
+    necesitaSalsaLocal = false;
+  }
+
+    if (productoLower.includes("matambre napolitana")) {
     necesitaSalsaLocal = false;
   }
 
@@ -227,6 +232,10 @@ function mostrarModalOpciones(
       productoLower.includes("pollo".toLowerCase()) ||
       productoLower.includes("cerdo".toLowerCase()) ||
       productoLower.includes("napolitana especial")
+      ||
+      productoLower.includes("la bomba")
+      ||
+      productoLower.includes("pechuga grillada")
     ) {
       opciones = guarnicionesCarnes;
     } else if (guarnicionReducida) {
@@ -256,14 +265,7 @@ function confirmarAgregar() {
   const guarnicion = document.getElementById('select-guarnicion').value;
   let final = producto;
 
-  if (necesitaSalsaLocal && !salsa) {
-    alert("Elegí una salsa.");
-    return;
-  }
-  if (necesitaGuarnicionLocal && !guarnicion) {
-    alert("Elegí una guarnición.");
-    return;
-  }
+
 
   if (salsa) final += ` (con ${salsa})`;
   if (guarnicion) final += ` (con ${guarnicion})`;
@@ -416,17 +418,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let mensaje = `_¡Hola! Te hago el siguiente pedido:_\n\n`;
-    mensaje += `👤 *Nombre:* ${nombre}\n`;
-    mensaje += `📱 *Teléfono:* ${telefono}\n\n`;
+    mensaje += ` *Nombre:* ${nombre}\n`;
+    mensaje += ` *Teléfono:* ${telefono}\n\n`;
     mensaje += tipoEntrega.toLowerCase().includes('retira')
-      ? `🏪 *Retiro del local*\n\n`
-      : `🏍️ *Delivery*\n\n`;
-    mensaje += `🍽️ *Pedido:*\n`;
+      ? ` *Retiro del local*\n\n`
+      : ` *Delivery*\n\n`;
+    mensaje += ` *Pedido:*\n`;
     mensaje += detalle + `\n`;
-    mensaje += `💳 *Será abonado con:* ${formaPago}\n\n`;
+    mensaje += ` *Será abonado con:* ${formaPago}\n\n`;
     mensaje += `Espero tu respuesta para confirmar mi pedido`;
 
-    const numero = '543534069898';
+    const numero = '5493534766302';
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 
@@ -449,6 +451,7 @@ function mostrarNotificacion(texto) {
     setTimeout(() => noti.classList.add("oculto"), 500);
   }, 2000);
 }
+
 
 
 
