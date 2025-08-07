@@ -388,13 +388,25 @@ a {
 
 }
 
+.modal-contenido-whatsapp{
+    background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #000;
+  position: relative;
+  max-height: 80vh;    
+  overflow: hidden;
+}
+
 .field {
   margin-bottom: 12px; 
   display: flex; 
   flex-direction: column;
 }
-.field label { font-size: .9rem; margin-bottom: 4px; }
-.field input, .field select {
+.label-form { font-size: .9rem; margin-bottom: 4px; }
+.input-form, .select-form {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -406,22 +418,31 @@ a {
   gap: 8px;
   margin-top: 8px;
 }
-.acciones button {
+.button-form {
   padding: 8px 14px;
   border: none;
   border-radius: 6px;
   font-weight: 600;
 }
-.acciones button:first-child { 
+.button-form:first-child { 
   background: #ddd; 
   cursor: pointer;
 }
 
-.acciones button:last-child { 
+.button-form:last-child { 
   background: #25D366; 
   color: #fff; 
   cursor: pointer;
 
+}
+
+.titulo-modal{
+    font-weight: 400;
+    border-bottom: 1px solid #f1f1f1; 
+    margin-left: 1rem;
+    padding: 5px 10px;
+    color: #f39c12;
+    font-size: 1.4rem;
 }
 
 .resumen-carrito {
@@ -609,5 +630,7 @@ h5{
 }
 
 }
+
+
 
 
